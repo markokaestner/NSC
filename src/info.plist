@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.markokaestner.nsc</string>
+	<key>connections</key>
+	<dict>
+		<key>12D106C7-8A17-4333-8E91-416792BF3DF1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98A7D303-C342-4AAF-A420-91FF93347CD3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>34E02C25-7316-4E16-BA4C-CFDB50B40404</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>2ADA98AB-9A5A-4120-8E3D-77E46EFC8A26</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98A7D303-C342-4AAF-A420-91FF93347CD3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>34E02C25-7316-4E16-BA4C-CFDB50B40404</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>487DBA45-BBB4-43CC-B2C7-B173430C2431</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98A7D303-C342-4AAF-A420-91FF93347CD3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>34E02C25-7316-4E16-BA4C-CFDB50B40404</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>54CF4C34-B28A-4142-ABE9-D7E2947F9CE1</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98A7D303-C342-4AAF-A420-91FF93347CD3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>34E02C25-7316-4E16-BA4C-CFDB50B40404</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>F1FACC90-70D3-4747-B540-F12F5957E2F6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>98A7D303-C342-4AAF-A420-91FF93347CD3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>34E02C25-7316-4E16-BA4C-CFDB50B40404</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Marko Kaestner</string>
+	<key>description</key>
+	<string>Number System Converter</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>NSC</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>octal</string>
+				<key>runningsubtext</key>
+				<string>converting ...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+OCT=$(echo "{query}" | tr [[:lower:]] [[:upper:]])
+RANDOM=$(date +"%s")
+
+DEC=$(echo "obase=10; ibase=8; $OCT" | bc)
+addResult "${RANDOM}1" "$DEC" "$DEC" "Decimal" "icons/decimal.png" "yes"
+
+HEX=$(echo "obase=16; ibase=8; $OCT" | bc)
+addResult "${RANDOM}2" "$HEX" "$HEX" "Hexadecimal" "icons/hex.png" "yes"
+
+BIN=$(echo "obase=2; ibase=8; $OCT" | bc)
+addResult "${RANDOM}3" "$BIN" "$BIN" "Binary" "icons/binary.png" "yes"
+
+getXMLResults</string>
+				<key>subtext</key>
+				<string>Type any octal number</string>
+				<key>title</key>
+				<string>convert octal</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>487DBA45-BBB4-43CC-B2C7-B173430C2431</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>convert</string>
+				<key>runningsubtext</key>
+				<string>converting ...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+INPUT=({query})
+
+if [ "${#INPUT[*]}" != "3" ]; then
+	exit
+fi
+
+NUM=$(echo "${INPUT[0]}" | tr [[:lower:]] [[:upper:]])
+IBASE=${INPUT[1]}
+OBASE=${INPUT[2]}
+RANDOM=$(date +"%s")
+
+DEC=$(echo "obase=10; ibase=$IBASE; $NUM" | bc)
+addResult "${RANDOM}1" "$DEC" "$DEC" "Decimal" "icons/decimal.png" "yes"
+
+CONV=$(echo "obase=$OBASE; ibase=$IBASE; $NUM" | bc)
+addResult "${RANDOM}2" "$CONV" "$CONV" "Number to base $OBASE" "icon.png" "yes"
+
+getXMLResults</string>
+				<key>subtext</key>
+				<string>convert number to other system</string>
+				<key>title</key>
+				<string>convert a number</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>12D106C7-8A17-4333-8E91-416792BF3DF1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>binary</string>
+				<key>runningsubtext</key>
+				<string>converting ...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+BIN="{query}"
+RANDOM=$(date +"%s")
+
+DEC=$(echo "obase=10; ibase=2; $BIN" | bc)
+addResult "${RANDOM}1" "$DEC" "$DEC" "Decimal" "icons/decimal.png" "yes"
+
+HEX=$(echo "obase=16; ibase=2; $BIN" | bc)
+addResult "${RANDOM}2" "$HEX" "$HEX" "Hexadecimal" "icons/hex.png" "yes"
+
+OCT=$(echo "obase=8; ibase=2; $BIN" | bc)
+addResult "${RANDOM}3" "$OCT" "$OCT" "Octal" "icons/octal.png" "yes"
+
+getXMLResults</string>
+				<key>subtext</key>
+				<string>Type any binary number</string>
+				<key>title</key>
+				<string>convert binary</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>F1FACC90-70D3-4747-B540-F12F5957E2F6</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>hex</string>
+				<key>runningsubtext</key>
+				<string>converting ...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+HEX=$(echo "{query}" | tr [[:lower:]] [[:upper:]])
+RANDOM=$(date +"%s")
+
+DEC=$(echo "obase=10; ibase=16; $HEX" | bc)
+addResult "${RANDOM}1" "$DEC" "$DEC" "Decimal" "icons/decimal.png" "yes"
+
+OCT=$(echo "obase=8; ibase=16; $HEX" | bc)
+addResult "${RANDOM}2" "$OCT" "$OCT" "Octal" "icons/octal.png" "yes"
+
+BIN=$(echo "obase=2; ibase=16; $HEX" | bc)
+addResult "${RANDOM}3" "$BIN" "$BIN" "Binary" "icons/binary.png" "yes"
+
+getXMLResults</string>
+				<key>subtext</key>
+				<string>Type any hexadecimal number</string>
+				<key>title</key>
+				<string>convert hex</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>2ADA98AB-9A5A-4120-8E3D-77E46EFC8A26</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>The converted number {query} is copied to your clipboard.</string>
+				<key>title</key>
+				<string>{query} copied</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>34E02C25-7316-4E16-BA4C-CFDB50B40404</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>decimal</string>
+				<key>runningsubtext</key>
+				<string>converting ...</string>
+				<key>script</key>
+				<string>. workflowHandler.sh
+
+DEC="{query}"
+RANDOM=$(date +"%s")
+
+HEX=$(echo "obase=16; ibase=10; $DEC" | bc)
+addResult "${RANDOM}1" "$HEX" "$HEX" "Hexadecimal" "icons/hex.png" "yes"
+
+OCT=$(echo "obase=8; ibase=10; $DEC" | bc)
+addResult "${RANDOM}2" "$OCT" "$OCT" "Octal" "icons/octal.png" "yes"
+
+BIN=$(echo "obase=2; ibase=10; $DEC" | bc)
+addResult "${RANDOM}3" "$BIN" "$BIN" "Binary" "icons/binary.png" "yes"
+
+getXMLResults</string>
+				<key>subtext</key>
+				<string>Type any decimal number</string>
+				<key>title</key>
+				<string>convert decimal</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>54CF4C34-B28A-4142-ABE9-D7E2947F9CE1</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>98A7D303-C342-4AAF-A420-91FF93347CD3</string>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>NSC is a nice workflow which converts your numbers into every other system.
+
+The most common ones are the decimal, binary, octal and hexadecimal. But NSC also converts other numbers.
+
+The original Python based version was developed by Hans-Helge Buerger (http://hanshelgebuerger.de).</string>
+	<key>uidata</key>
+	<dict>
+		<key>12D106C7-8A17-4333-8E91-416792BF3DF1</key>
+		<dict>
+			<key>ypos</key>
+			<real>530</real>
+		</dict>
+		<key>2ADA98AB-9A5A-4120-8E3D-77E46EFC8A26</key>
+		<dict>
+			<key>ypos</key>
+			<real>420</real>
+		</dict>
+		<key>34E02C25-7316-4E16-BA4C-CFDB50B40404</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+		<key>487DBA45-BBB4-43CC-B2C7-B173430C2431</key>
+		<dict>
+			<key>ypos</key>
+			<real>310</real>
+		</dict>
+		<key>54CF4C34-B28A-4142-ABE9-D7E2947F9CE1</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>98A7D303-C342-4AAF-A420-91FF93347CD3</key>
+		<dict>
+			<key>ypos</key>
+			<real>90</real>
+		</dict>
+		<key>F1FACC90-70D3-4747-B540-F12F5957E2F6</key>
+		<dict>
+			<key>ypos</key>
+			<real>200</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://markokaestner.com</string>
+</dict>
+</plist>
